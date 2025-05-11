@@ -7,12 +7,12 @@ getFilmBtn.addEventListener("click", function (event) {
     console.log(search.value);
     populatedList.innerHTML = ""; // first we clean the container
 
-    fetch(`http://www.omdbapi.com/?s=${search.value}&apikey=22949cc9`)
+    fetch(`https://www.omdbapi.com/?s=${search.value}&apikey=22949cc9`)
         .then((res) => res.json())
         .then((data) => {
             if (data.Search) {
                 data.Search.forEach((film) => {
-                    fetch(`http://www.omdbapi.com/?i=${film.imdbID}&apikey=22949cc9`)
+                    fetch(`https://www.omdbapi.com/?i=${film.imdbID}&apikey=22949cc9`)
                         .then((res) => res.json())
                         .then((data) => {
 
